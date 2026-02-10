@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iqraBooks | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0a0c43',
+            secondary: '#1a1c63',
+            accent: '#4a5dff',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at top right, #f0f4ff, #f8fafc);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f8fafc] text-[#1a1a1a] font-sans antialiased">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl text-primary tracking-tight">
+        iqra<span class="text-accent underline decoration-accent/20">Books</span>
+      </div>
+      <nav class="flex items-center gap-4">
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex items-center gap-1">
+          <li><a href="Home.html" class="px-4 py-2 rounded-lg text-primary transition-all">Home</a>
+          </li>
+          <li><a href="Order.html" class="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 transition-all">Order
+              Now</a></li>
+
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <button id="cart-btn" class="relative p-2.5 hover:bg-gray-100 rounded-full transition-all group">
+            <i data-lucide="shopping-bag" class="w-6 h-6 text-primary group-hover:text-accent transition-colors"></i>
+            <span id="cart-count"
+              class="absolute top-0 right-0 bg-accent text-white text-[10px] px-1.5 py-0.5 rounded-full border-2 border-white">0</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button id="menu-toggle" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-all">
+            <i data-lucide="menu" class="w-6 h-6 text-primary"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-white z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col p-8 shadow-2xl">
+      <div class="flex justify-end mb-8">
+        <button id="close-menu" class="p-2">
+          <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-6 text-center text-2xl">
+        <a href="Home.html" class="text-primary">Home</a>
+        <a href="Order.html" class="text-gray-600">Order Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 relative">
+    <!-- Background Ornaments -->
+    <div class="absolute top-0 right-0 -z-10 w-64 h-64 bg-accent/5 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-1/2 left-0 -z-10 w-96 h-96 bg-primary/5 blur-3xl rounded-full"></div>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-white border border-gray-100 rounded-[3rem] my-8 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-sm relative overflow-hidden">
+
+      <div class="flex-1 space-y-8 relative z-10">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs tracking-wide uppercase">
+          <i data-lucide="sparkles" class="w-4 h-4"></i> Your next adventure awaits
+        </div>
+        <h1 class="text-5xl md:text-7xl text-primary leading-[1.1] tracking-tight">
+          Read Your Heart <span class="text-accent underline decoration-accent/20">Out</span>.
+        </h1>
+        <p class="text-xl text-gray-500 leading-relaxed max-w-lg">
+          Unlock a universe of knowledge and storytelling. iqraBooks brings the library to your pocket with a
+          seamless, premium reading experience.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="Order.html"
+            class="px-6 py-3 bg-primary text-white rounded-xl hover:bg-secondary hover:-translate-y-1 transition-all shadow-lg shadow-primary/20 flex items-center gap-2">
+            Order Your First Book <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center relative">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop"
+          alt="Premium Book" class="w-[450px] rounded-[2rem] shadow-xl relative z-10 object-cover aspect-[3/4]">
+      </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="py-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        class="p-8 rounded-[2rem] bg-white border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+        <div
+          class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+          <i data-lucide="zap" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-xl text-primary mb-3">Instant Delivery</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">No waiting for shipping. Get your books delivered to your inbox
+          the moment you checkout.</p>
+      </div>
+      <div
+        class="p-8 rounded-[2rem] bg-primary text-white shadow-2xl shadow-primary/20 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
+        <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+          <i data-lucide="book-open" class="w-32 h-32"></i>
+        </div>
+        <div
+          class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+          <i data-lucide="book-open" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-xl mb-3 text-white">Curated Library</h3>
+        <p class="text-white/70 leading-relaxed text-sm">We handpick every title to ensure our readers only get the
+          highest quality literature and research.</p>
+      </div>
+      <div
+        class="p-8 rounded-[2rem] bg-white border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+        <div
+          class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+          <i data-lucide="award" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Premium Quality</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">High-resolution covers and perfectly formatted text for a
+          comfortable reading experience on any device.</p>
+      </div>
+    </section>
+
+    <!-- Vision / About Section -->
+    <section class="py-24 flex flex-col md:flex-row items-center gap-16">
+      <div class="flex-1 order-2 md:order-1">
+        <div class="relative group">
+          <div
+            class="absolute -inset-4 bg-accent/20 rounded-[2.5rem] blur-2xl group-hover:bg-accent/30 transition-all duration-700">
+          </div>
+          <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-white">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop"
+              class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-1000"
+              alt="iqraBooks Library">
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-gray-50 z-20">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Industry Leader</p>
+                <p class="text-lg text-primary">Certified Quality</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 space-y-8 order-1 md:order-2">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 text-accent rounded-full text-xs tracking-wide uppercase">
+          <i data-lucide="book-open" class="w-4 h-4"></i> Our Story & Vision
+        </div>
+        <h2 class="text-4xl md:text-5xl text-primary leading-tight">
+          Elevating Every <span class="text-accent underline decoration-accent/10">Chapter</span> to an Experience.
+        </h2>
+        <div class="space-y-6">
+          <p class="text-lg text-gray-500 leading-relaxed font-normal">
+            iqraBooks was born from a simple desire: to make high-quality literature accessible to everyone,
+            everywhere.
+            We curated our collection with precision, focusing on stories that inspire and research that transforms.
+          </p>
+          <p class="text-lg text-gray-500 leading-relaxed font-normal">
+            Whether you are diving into architectural masterclasses or lost in a gripping novel, our platform provides a
+            distraction-free, premium environment designed specifically for true bibliophiles.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 pt-4">
+          <div class="flex items-center gap-3 text-primary">
+            <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <span>Global Reach</span>
+          </div>
+          <div class="flex items-center gap-3 text-primary">
+            <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <span>Secure Access</span>
+          </div>
+          <div class="flex items-center gap-3 text-primary">
+            <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+              <i data-lucide="infinity" class="w-5 h-5"></i>
+            </div>
+            <span>Lifetime Library</span>
+          </div>
+          <div class="flex items-center gap-3 text-primary">
+            <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+              <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+            </div>
+            <span>Daily Updates</span>
+          </div>
+        </div>
+
+        <div class="pt-6">
+          <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-primary transition-colors group">
+            Learn more about our journey
+            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Books Section -->
+    <section class="py-24">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="space-y-4">
+          <h2 class="text-4xl md:text-5xl text-primary">Trending <span class="text-accent italic">Now</span>
+          </h2>
+          <p class="text-xl text-gray-500 font-normal">Most read books this week by our global community.</p>
+        </div>
+        <a href="#"
+          class="px-8 py-4 bg-gray-100 text-primary rounded-2xl hover:bg-accent hover:text-white transition-all flex items-center gap-2">
+          View All Library <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="group cursor-pointer">
+          <div
+            class="relative mb-6 overflow-hidden rounded-[2rem] aspect-[3/4] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+            <img src="images/book1.webp"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Fortress Blood">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <button class="buy-btn w-full py-3 bg-white text-primary rounded-xl shadow-lg" data-name="Fortress Blood"
+                data-price="12.99" data-image="images/book1.webp">Buy Now</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl text-primary mb-1">Fortress Blood</h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest">Action & Adventure</p>
+            </div>
+            <span class="text-accent font-bold">$12.99</span>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div
+            class="relative mb-6 overflow-hidden rounded-[2rem] aspect-[3/4] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+            <img src="images/book2.webp"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Soul">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <button class="buy-btn w-full py-3 bg-white text-primary rounded-xl shadow-lg" data-name="Soul"
+                data-price="9.49" data-image="images/book2.webp">Buy Now</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl text-primary mb-1">Soul</h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest">Spiritual</p>
+            </div>
+            <span class="text-accent font-bold">$9.49</span>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div
+            class="relative mb-6 overflow-hidden rounded-[2rem] aspect-[3/4] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+            <img src="images/book3.webp"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Never Ending Sky">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <button class="buy-btn w-full py-3 bg-white text-primary rounded-xl shadow-lg"
+                data-name="Never Ending Sky" data-price="9.49" data-image="images/book3.webp">Buy Now</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl text-primary mb-1">Never Ending Sky</h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest">Fiction</p>
+            </div>
+            <span class="text-accent font-bold">$9.49</span>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div
+            class="relative mb-6 overflow-hidden rounded-[2rem] aspect-[3/4] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+            <img src="images/book4.webp"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="The Hypocrite World">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            </div>
+            <div
+              class="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <button class="buy-btn w-full py-3 bg-white text-primary rounded-xl shadow-lg"
+                data-name="The Hypocrite World" data-price="9.49" data-image="images/book4.webp">Buy Now</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="text-xl text-primary mb-1">The Hypocrite World</h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest">Social Drama</p>
+            </div>
+            <span class="text-accent font-bold">$9.49</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 mt-24">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Brand Section -->
+        <div class="space-y-6">
+          <div class="text-2xl text-primary tracking-tight">
+            iqra<span class="text-accent underline decoration-accent/20">Books</span>
+          </div>
+          <p class="text-gray-500 leading-relaxed text-sm max-w-xs">
+            Bringing the world's finest stories and research to your digital library. Your premium reading experience
+            starts here.
+          </p>
+          <div class="flex gap-4">
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-accent hover:text-white transition-all">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-accent hover:text-white transition-all">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-accent hover:text-white transition-all">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-6">
+          <h4 class="text-sm uppercase tracking-[0.2em] text-primary/40 font-medium">Quick Links</h4>
+          <ul class="space-y-4">
+            <li><a href="Home.html" class="text-gray-500 hover:text-accent transition-colors text-sm">Home</a></li>
+            <li><a href="Order.html" class="text-gray-500 hover:text-accent transition-colors text-sm">Order Now</a>
+            </li>
+            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors text-sm">Our Books</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="space-y-6">
+          <h4 class="text-sm uppercase tracking-[0.2em] text-primary/40 font-medium">Company</h4>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors text-sm">Our Story</a>
+            </li>
+            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors text-sm">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors text-sm">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-500 hover:text-accent transition-colors text-sm">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <h4 class="text-sm uppercase tracking-[0.2em] text-primary/40 font-medium">Get in Touch</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-5 h-5 text-accent mt-0.5"></i>
+              <span class="text-gray-500 text-sm">support@iqrabooks.com</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-accent mt-0.5"></i>
+              <span class="text-gray-500 text-sm">123 Library Street, Digital City</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-20 pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-400 uppercase tracking-widest">&copy; 2025 iqraBooks. All rights reserved.</p>
+        <div class="flex items-center gap-2 text-primary/20">
+          <i data-lucide="credit-card" class="w-4 h-4"></i>
+          <span class="text-[10px] uppercase tracking-tighter italic font-medium">Secure Checkout Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Cart Modal -->
+  <div id="cart-modal"
+    class="fixed top-0 right-0 h-full w-full md:w-[380px] bg-white shadow-2xl z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col">
+    <div class="p-8 border-b border-gray-50 flex justify-between items-center bg-gray-50/50">
+      <h2 class="text-xl text-primary flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5"></i> Your Bag
+      </h2>
+      <button id="close-cart"
+        class="p-2 hover:bg-white rounded-full transition-colors text-gray-400 hover:text-primary">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-6">
+      <!-- Items injected via JS -->
+      <div class="flex flex-col items-center justify-center h-full text-center space-y-4 opacity-40">
+        <i data-lucide="shopping-cart" class="w-16 h-16"></i>
+        <p class="uppercase tracking-widest text-xs">Your bag is empty</p>
+      </div>
+    </div>
+
+    <div class="p-8 border-t border-gray-50 space-y-6">
+      <div class="flex justify-between items-center">
+        <span class="text-gray-400 uppercase text-xs tracking-widest">Subtotal</span>
+        <span id="cart-total" class="text-2xl text-primary">$0.00</span>
+      </div>
+      <button
+        class="w-full py-5 bg-primary text-white rounded-xl hover:bg-secondary transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3">
+        Checkout Now <i data-lucide="credit-card" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
